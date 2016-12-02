@@ -1,0 +1,184 @@
+body{
+	margin: 0;
+	font-family: "Helvetica", "Arial", sans-serif;
+	line-height: 1.6;
+	color: #555;
+}
+
+header {
+	/*display: block;*/
+	height: 50px;
+	/*margin: 0;*/
+	background-color: #273c5b;
+	/*line-height: 50px;*/
+	/*color:white;*/
+	font-family: Arial;
+	vertical-align: center;
+}
+
+/*header > img {
+	display:inline;
+	margin: 0 auto;
+	padding-top: 5px;
+}*/
+header > h1 {
+	text-align: left;
+	margin: 0px 0px 0px 20px;
+	font-size: 2em;
+}
+
+
+#main_nav > ul {
+
+    padding: 0;
+    margin: 0;
+    display: block;
+	/*list-style-type: none;*/
+/*    margin: 0;
+    padding: 0;
+    display: inline;*/
+}
+
+#main_nav > ul > li a img{
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+#main_nav > ul a {
+	text-decoration: none;
+	color: beige;
+}
+
+#main_nav > ul > li > ul {
+
+
+    position: absolute;
+    display: none;
+}
+
+#main_nav > ul > li > ul > li {
+	list-style-type: none;
+	display: block;
+}
+
+#main_nav > ul > li > ul  a {
+	color: black;
+}
+
+
+
+#main_nav > ul > li:hover > ul {
+    display: block;
+}
+
+#main_nav > ul > li {
+	/*background-color: black;*/
+    display: inline;
+    position: relative;
+}
+
+#headlessbody {
+	min-height: 100%;
+	display: flex;
+	flex-flow: row;
+	padding-top: 20px;
+}
+
+#headlessbody > main {
+	flex: 3 1 40%;
+	order: 2;
+	background: #f7f7f7;
+	padding: 15px;
+}
+
+#headlessbody > #leftflank {
+	flex: 1 6 20%;
+	order: 1;
+	/*background: #581845;*/
+	background: white;
+}
+
+#headlessbody > #rightflank {
+	flex: 1 6 20%;
+	order: 3;
+	/*background: #900C39;*/
+	background: white;
+}
+
+
+.form-wrapper {
+	/*border-radius: 25px;*/
+	padding: 10px;
+	width: 40%;
+	margin: 200px auto;
+	color: white;
+	background-color: rgba(32,166,231,1);
+	text-align: center;
+}
+
+.error {
+	color: red;
+}
+
+label {
+	display: block;
+	font-size: 12pt;
+	text-align: left;
+}
+
+form > table {
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+input[type=text] {
+	width: 90%;
+	font-size: 12pt;
+	padding: 2px;
+}
+
+
+hr {
+	margin: 20px;
+}
+
+
+
+textarea {
+	width: 400px;
+	height: 100px;
+}
+
+
+
+@media all and (max-width: 640px) {
+	#headlessbody, #page {
+		flex-direction: column;
+	}
+
+	header {
+		flex: 1 6 20%;
+	}
+
+	#headlessbody > #leftflank {
+		flex: 1 6 20%;
+	}
+
+	main {
+		flex: 3 1 20%;
+	}
+
+	#headlessbody > #rightflank {
+		flex: 1 6 20%;
+	}
+
+	#headlessbody > #leftflank, #headlessbody > #rightflank {
+		min-height: 50px;
+		max-height: 50px;
+	}
+
+	header > h1 {
+		font-size: 21pt;
+	}
+}

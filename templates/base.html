@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% block head %}{% endblock %}
+		<title>{% block title %}boutique{% endblock %}</title>
+		<meta name="description" content="{% block metacontent %}{% endblock %}">
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin Slab">
+
+		<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
+	</head>
+	<body>
+
+		<header>
+				<nav id="main_nav">
+					<ul>
+						<li>
+							<a href="/">
+								<img src="static/images/logo.png"></img>
+							</a>
+						</li>
+				    </ul>
+				</nav>
+			{% block header %}
+			{% endblock %}
+		</header>
+
+	<div id="headlessbody">
+
+		<main>
+			{% block core %}{% endblock %}
+		</main>
+
+		<aside id="leftflank">
+			{% block leftflank %}{% endblock %}
+		</aside>
+
+		<aside id="rightflank">
+			{% block rightflank %}{% endblock %}
+		</aside>
+
+	</div>
+
+	</body>
+</html>

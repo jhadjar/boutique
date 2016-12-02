@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+	{% block core %}
+		<ul class="catalog">
+
+			{% block warehouse %}
+
+					{% for product in warehouse %}
+						<li>
+							<a href={{product}}>
+								<img src="static/images/product.png">
+							</a>
+						</li>
+					{% endfor %}
+
+			{% endblock %}
+		</ul>
+	{% endblock %}
