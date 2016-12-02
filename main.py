@@ -8,7 +8,7 @@ import jinja2
 import webapp2
 from google.appengine.ext import db
 
-__title__ = 'gaefun'
+__title__ = 'boutique'
 __version__ = '1.0'
 __author__ = 'Jugurtha Hadjar'
 __license__ = 'Apache 2.0'
