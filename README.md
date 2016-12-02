@@ -1,5 +1,7 @@
 # boutique
 
+http://ze-boutique.appspot.com/
+
 boutique is a minimalistic store that allows the user to work with the most ubiquitous user interface: folders.
 The user doesn't add products through a form. He simply creates a folder on his machine (in this example, the folder is "products"). The application then just displays the folders as products.
 
