@@ -13,10 +13,10 @@ handlers:
 - url: /static/css
   static_dir: static/css
   expiration: "1d"
+
 - url: /static/images
   static_dir: static/images
-# - url: /css
-#   static_dir: css
+  expiration: "7d"
 
 - url: /.*
   script: main.app

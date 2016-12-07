@@ -9,15 +9,9 @@ header {
 	height: 50px;
 	background-color: #273c5b;
 	font-family: Arial;
-	padding-top: 5px;
-	vertical-align: center;
-}
-
-
-img.error {
-	width: 80%;
-	margin: 0 auto;
-	display: block;
+	position: fixed;
+	display: flex;
+	width:100%;
 }
 
 header  h1 {
@@ -28,6 +22,8 @@ header  h1 {
 	font-family: Josefin Slab;
 	line-height: 40px;
 }
+
+
 
 
 #main_nav > ul {
@@ -77,14 +73,14 @@ header  h1 {
 	min-height: 100%;
 	display: flex;
 	flex-flow: row;
-	padding-top: 5%;
 }
 
 #headlessbody > main {
 	flex: 3 1 40%;
 	order: 2;
 	background: #f7f7f7;
-	padding: 15px;
+	margin-top: 50px;
+	padding-top: 15px;
 }
 
 #headlessbody > #leftflank {
@@ -99,10 +95,15 @@ header  h1 {
 	background: white;
 }
 
+img.error {
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+}
 
 ul.catalog {
 	list-style: none;
-	font-size: 0px;
+	font-size: 16px;
 	padding: 0px;
 	margin: 0px auto;
 	text-align: center;
@@ -110,7 +111,7 @@ ul.catalog {
 }
 
 ul.catalog li {
-	width: 33%;
+	width: 30%;
 	display: inline-block;
 	background: #fff;
 	border: 1px solid #ddd;
@@ -153,9 +154,9 @@ ul.catalog li img {
 	}
 
 
-	#headlessbody {
+/*	#headlessbody {
 		padding: 0px;
-	}
+	}*/
 
 	header {
 		flex: 1 6 20%;
@@ -167,6 +168,7 @@ ul.catalog li img {
 
 	main {
 		flex: 3 1 20%;
+
 	}
 
 	#headlessbody > #rightflank {

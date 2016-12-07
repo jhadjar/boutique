@@ -1,12 +1,14 @@
 """
-	boutique is a nano online catalog.
+	boutique, a tiny ecommerce solution you already know how to use.
+
+	Create folders to create product categories, subcategories, and products.
+	If a product belongs to multiple categories, simply create a shortcut to it.
 """
 
 import os
 
 import jinja2
 import webapp2
-from google.appengine.ext import db
 
 __title__ = 'boutique'
 __version__ = '1.0'
@@ -20,12 +22,9 @@ PAGES = {
 	'404': "404.html",
 }
 
-
-
 URLS = [
 	('/.*', 'main.FrontHandler', 'products'),
 ]
-
 
 
 # Set execution environment: current directory, static files, etc.
@@ -65,29 +64,38 @@ class FrontHandler(Handler):
 
 	def get(self):
 
-
+		requested_path = self.request.path.lstrip('/')
+		links = make_links(requested_path)
+		print links
 		try:
-			tree = os.walk('products/'+self.request.path.lstrip('/')).next()[1]
 			data = {
-				'warehouse': tree,
+				'categories': links,
 			}
 
 			self.render(PAGES['main'], data)
-		except StopIteration:
-			self.render(PAGES['main'])
-		# p = 'products/' + self.request.path.lstrip('/')
-		# r = clerk(p)
-		# print r
+
+		except TypeError:
+			print "TypeError"
+			self.render(PAGES['main'], {})
 
 
-def clerk(directory):
 
+def make_links(directory='products'):
+	"""
+		Make links from directory's subdirectories
+		Example:	"category1" contains "subcategory1", "subcategory2".
+					This will return the following:
+						/category1/subcategory1
+						/category1/subcategory2
+
+	"""
 	try:
-		p = os.walk(directory).next()[1]
-		for d in p: print 'products/' + d
-		return p if p else ['Empty']
-	except StopIteration:
-		return ['Product']
+		directories = os.walk(os.path.join('products', directory)).next()[1]
+		links = ['/' + os.path.join(directory, d) for d in directories]
+		return links if links else None
+	except StopIteration as e:
+		return ['StopIteration']
+
 
 def handle_404(request, response, exception):
 	t = jinja_env.get_template('404.html')
@@ -96,8 +104,6 @@ def handle_404(request, response, exception):
 	}
 	response.out.write(t.render(data))
 	response.set_status(404)
-
-trail = 'products/'
 
 app = webapp2.WSGIApplication(URLS, debug=True)
 app.error_handlers[404] = handle_404
