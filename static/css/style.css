@@ -3,6 +3,8 @@ body {
 	font-family: "Helvetica", "Arial", sans-serif;
 	line-height: 1.6;
 	color: #555;
+	background: #f7f7f7;
+
 }
 
 header {
@@ -14,7 +16,7 @@ header {
 	width:100%;
 }
 
-header  h1 {
+header h1 {
 	text-align: left;
 	margin: 0px 0px 0px 20px;
 	font-size: 2em;
@@ -79,20 +81,22 @@ header  h1 {
 	flex: 3 1 40%;
 	order: 2;
 	background: #f7f7f7;
-	margin-top: 50px;
-	padding-top: 15px;
+	margin-top: 100px;
+	/*padding-top: 15px;*/
 }
 
 #headlessbody > #leftflank {
 	flex: 1 6 20%;
 	order: 1;
-	background: white;
+	background: #f7f7f7;
+
 }
 
 #headlessbody > #rightflank {
 	flex: 1 6 20%;
 	order: 3;
-	background: white;
+	background: #f7f7f7;
+
 }
 
 img.error {
@@ -107,21 +111,21 @@ ul.catalog {
 	padding: 0px;
 	margin: 0px auto;
 	text-align: center;
-	/*margin: 0 auto;*/
 }
 
 ul.catalog li {
 	width: 30%;
 	display: inline-block;
 	background: #fff;
-	border: 1px solid #ddd;
+	/*border: 1px solid #ddd;*/
 	font-size: 16px;
 	font-size: 1rem;
 	vertical-align: top;
-	box-shadow: 0 0 5px #ddd;
-	box-sizing: border-box;
+	margin: 10px;
+	box-shadow: 0 0 10px #ddd;
+/*	box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
+	-webkit-box-sizing: border-box;*/
 }
 
 ul.catalog li img {

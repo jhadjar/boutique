@@ -67,16 +67,16 @@ class FrontHandler(Handler):
 		requested_path = self.request.path.lstrip('/')
 		links = make_links(requested_path)
 		print links
+		data = {
+			'categories': links,
+		}
 		try:
-			data = {
-				'categories': links,
-			}
 
 			self.render(PAGES['main'], data)
 
 		except TypeError:
 			print "TypeError"
-			self.render(PAGES['main'], {})
+			self.render(PAGES['main'])
 
 
 
@@ -94,7 +94,7 @@ def make_links(directory='products'):
 		links = ['/' + os.path.join(directory, d) for d in directories]
 		return links if links else None
 	except StopIteration as e:
-		return ['StopIteration']
+		return ['/products']
 
 
 def handle_404(request, response, exception):

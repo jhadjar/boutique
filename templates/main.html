@@ -5,9 +5,12 @@
 				<ul class="catalog">
 					{% for product in categories %}
 						<li>
+							<div class="store_thumb">
 							<a href={{product}}>
-								<img src="/static/images/product.png">
+								<img src="/static/images/product.jpg">
+								<h4>Product name here</h4>
 							</a>
+							</div>
 						</li>
 					{% endfor %}
 				</ul>	

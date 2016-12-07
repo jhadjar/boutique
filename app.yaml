@@ -12,10 +12,14 @@ handlers:
 
 - url: /static/css
   static_dir: static/css
-  expiration: "1d"
+  http_headers:
+    Vary: Accept-Encoding
+  expiration: "7d"
 
 - url: /static/images
   static_dir: static/images
+  http_headers:
+    Vary: Accept-Encoding
   expiration: "7d"
 
 - url: /.*
