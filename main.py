@@ -90,7 +90,9 @@ def make_links(directory='products'):
 
 	"""
 	try:
-		directories = os.walk(os.path.join('products', directory)).next()[1]
+		directories = os.walk(
+						os.path.join('products', directory), followlinks=True
+						).next()[1]
 		links = ['/' + os.path.join(directory, d) for d in directories]
 		return links if links else None
 	except StopIteration as e:

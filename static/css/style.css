@@ -1,190 +1,121 @@
 body {
-	margin: 0;
-	font-family: "Helvetica", "Arial", sans-serif;
-	line-height: 1.6;
-	color: #555;
+	margin: 0 auto;
+	font-family: "Arial", sans-serif;
 	background: #f7f7f7;
-
 }
 
+/* Header */
 header {
-	height: 50px;
+	display: block;
+	min-height: 50px;
 	background-color: #273c5b;
-	font-family: Arial;
-	position: fixed;
+	margin-bottom: 100px;
 	display: flex;
-	width:100%;
 }
 
+
+/* Header: Service Name or Logo */
 header h1 {
 	text-align: left;
-	margin: 0px 0px 0px 20px;
 	font-size: 2em;
 	color: white;
-	font-family: Josefin Slab;
-	line-height: 40px;
+	line-height: 50px;
+	margin: 0 auto;
 }
 
+nav#main_nav ul {
+	margin: 0px 0px 0px 15px;
+	padding: 0;
 
-
-
-#main_nav > ul {
-
-    padding: 0;
-    margin: 0;
-    display: block;
 }
 
-#main_nav > ul > li a img{
-	margin-top: 5px;
-	margin-left: 15px;
-}
-
-#main_nav > ul a {
-	text-decoration: none;
-	color: beige;
-}
-
-#main_nav > ul > li > ul {
-
-
-    position: absolute;
-    display: none;
-}
-
-#main_nav > ul > li > ul > li {
+li {
 	list-style-type: none;
-	display: block;
 }
 
-#main_nav > ul > li > ul  a {
-	color: black;
-}
-
-
-#main_nav > ul > li:hover > ul {
-    display: block;
-}
-
-#main_nav > ul > li {
-    display: inline;
-    position: relative;
-}
-
-#headlessbody {
-	min-height: 100%;
+#content {
+	min-height: 800px;
 	display: flex;
 	flex-flow: row;
 }
 
-#headlessbody > main {
+#content > main {
 	flex: 3 1 40%;
 	order: 2;
 	background: #f7f7f7;
-	margin-top: 100px;
-	/*padding-top: 15px;*/
 }
 
-#headlessbody > #leftflank {
+#content > #leftflank {
 	flex: 1 6 20%;
 	order: 1;
 	background: #f7f7f7;
-
 }
 
-#headlessbody > #rightflank {
+#content > #rightflank {
 	flex: 1 6 20%;
 	order: 3;
 	background: #f7f7f7;
-
 }
 
-img.error {
-	width: 80%;
+
+/* Catalog: Offers or Products in the Main section (thumbs)*/
+
+.catalog {
 	margin: 0 auto;
-	display: block;
-}
-
-ul.catalog {
-	list-style: none;
-	font-size: 16px;
-	padding: 0px;
-	margin: 0px auto;
+	padding: 0;
 	text-align: center;
+	display: flex;
+	flex-direction: row;
 }
 
 ul.catalog li {
-	width: 30%;
+	flex: 1 1 70%;
 	display: inline-block;
-	background: #fff;
-	/*border: 1px solid #ddd;*/
+}
+
+.store_thumb {
+	margin: 10px 10px 5px 10px;
 	font-size: 16px;
-	font-size: 1rem;
 	vertical-align: top;
-	margin: 10px;
-	box-shadow: 0 0 10px #ddd;
-/*	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;*/
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+	background-color: white;
+	/*max-width: 150px;*/
 }
 
-ul.catalog li img {
-	max-width: 70%;
-	height: auto;
-	margin-top: 0px;
-	display: inline-block;
+a {
+	/*color: #009bff;*/
+	color: #9E9E9E;
+	text-decoration: none;
 }
-}
-
-
-.error {
-	color: red;
-}
-
 
 @media all and (max-width: 768px) {
-	#headlessbody, #page {
+	#content, #page {
+		flex-direction: column;
+	}
+
+
+
+	#content > main, #content > nav, #content > aside {
+	/* Return them to document order */
+		order: 0;
+	}
+  
+
+	#content > #leftflank, #content > #rightflank{
+		min-height: 50px;
+		max-height: 50px;
+	}	
+
+	ul.catalog {
 		flex-direction: column;
 	}
 
 	ul.catalog li {
-		width: 100%;
-		height: 4%;
+		max-height: 250px;
 	}
-
-	ul.catalog li img {
-		width: 30%;
-		float: left;
-	}
-
-
-/*	#headlessbody {
-		padding: 0px;
-	}*/
 
 	header {
-		flex: 1 6 20%;
+		margin-bottom: 50px;
 	}
 
-	#headlessbody > #leftflank {
-		flex: 1 6 20%;
-	}
-
-	main {
-		flex: 3 1 20%;
-
-	}
-
-	#headlessbody > #rightflank {
-		flex: 1 6 20%;
-	}
-
-	#headlessbody > #leftflank, #headlessbody > #rightflank {
-		min-height: 30px;
-		max-height: 30px;
-	}
-
-	header > h1 {
-		font-size: 21pt;
-	}
 }
