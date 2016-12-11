@@ -1,11 +1,38 @@
 # boutique
 
 
-boutique is a minimalistic store that allows the user to work with the most ubiquitous user interface: Folders.
+boutique is a minimalistic store that allows the user to use the most ubiquitous user interface: Folders.
 
-The user doesn't add products through a form, he simply creates a folder on his machine (in this example, the folder is named "products"). Then syncs the website. The application will display folders as product categories, subcategories, and products.
+The user doesn't add a product or category using a form, he simply creates a folder on his machine. Then syncs the website. The application will display folders as product categories, subcategories, and products.
 
-http://ze-boutique.appspot.com/ mirrors the folder "products" from this repo.
+http://ze-boutique.appspot.com/ is generated with the "products" folder from this repo. "products" has the following structure:
+
+```
+├── category1
+│   ├── description.txt
+│   ├── product1
+│   │   └── description.txt
+│   └── product2
+│       └── description.txt
+├── category2
+│   ├── description.txt
+│   ├── subcategory1
+│   │   ├── description.txt
+│   │   └── product7
+│   │       └── description.txt
+│   └── subcategory3
+│       ├── description.txt
+│       └── product6
+│           └── description.txt
+└── category3
+    ├── category1
+    │   ├── description.txt
+    │   └── product1
+    │       └── description.txt
+    ├── description.txt
+    └── product6
+        └── description.txt
+```        
 
 
 Some thoughts:
