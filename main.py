@@ -43,7 +43,7 @@ class Handler(webapp2.RequestHandler):
 		Handler for rendering templates.
 	"""
 
-	def render(self, template, data={}):
+	def render(self, template, **data):
 		"""
 			Render `template` populated with `data`.
 
@@ -72,7 +72,7 @@ class FrontHandler(Handler):
 		}
 		try:
 
-			self.render(PAGES['main'], data)
+			self.render(PAGES['main'], **data)
 
 		except TypeError:
 			print "TypeError"
