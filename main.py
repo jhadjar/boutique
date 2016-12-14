@@ -27,7 +27,7 @@ PAGES = {
 }
 
 URLS = [
-	('/.*', 'main.FrontHandler', 'products'),
+	('/.*', 'main.FrontHandler'),
 ]
 
 
