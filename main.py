@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 	boutique, a tiny ecommerce solution you already know how to use.
 
@@ -18,7 +20,8 @@ __copyright__ = 'Copyright 2016'
 
 
 PAGES = {
-	'main': "main.html",
+	'main': 'main.html',
+	'product': 'product.html',
 	'404': "404.html",
 }
 
@@ -76,8 +79,8 @@ class FrontHandler(Handler):
 
 		except TypeError:
 			print "TypeError"
-			self.render(PAGES['main'])
 
+			self.render(PAGES['product'])
 
 
 def make_links(directory='products'):

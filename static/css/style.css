@@ -65,11 +65,6 @@ li {
 	margin: 0 auto;
 	padding: 0;
 	text-align: center;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -moz-flex;
-	display: -webkit-flex;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -81,10 +76,14 @@ ul.catalog li {
 	/*flex-basis: 0;*/
 	width: 170px;
 
-	color: #9E9E9E;
-	text-decoration: none;
 
 	display: inline-block;
+}
+
+a {
+	color: #365899;
+	text-decoration: none;
+	/*#9E9E9E;*/
 }
 
 div.store_thumb {
@@ -122,7 +121,7 @@ div.store_thumb {
 	}
 
 	ul.catalog li {
-		width: 100px;
+		width: 10em;
 		font-size: 12px;
 	}
 
