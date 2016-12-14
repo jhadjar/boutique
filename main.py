@@ -9,8 +9,11 @@
 
 import os
 
+from collections import namedtuple
+
 import jinja2
 import webapp2
+
 
 __title__ = 'boutique'
 __version__ = '1.0'
@@ -37,8 +40,10 @@ templates = cwd + '/templates'
 
 jinja_env = jinja2.Environment(
 	loader = jinja2.FileSystemLoader(templates),
-	autoescape = True,
+	# autoescape = True,
 )
+
+Link = namedtuple('Link', ['path', 'name'])
 
 
 class Handler(webapp2.RequestHandler):
@@ -68,7 +73,7 @@ class FrontHandler(Handler):
 	def get(self):
 
 		requested_path = self.request.path.lstrip('/')
-		links = make_links(requested_path)
+		links = make_links(requested_path.encode('utf-8'))
 		print links
 		data = {
 			'categories': links,
@@ -96,7 +101,9 @@ def make_links(directory):
 						os.path.join('products', directory), followlinks=True
 						).next()[1]
 		links = ['/' + os.path.join(directory, d) for d in directories]
-		return links if links else None
+		names = [os.path.basename(link) for link in links]
+
+		return zip(links, names) if links else None
 	except StopIteration as e:
 		# Quick hack to handle nonexisting categories typed in the address bar.
 		# Calling make_links with an empty string lists links in "products"

@@ -72,9 +72,8 @@ li {
 }
 
 ul.catalog li {
-	/*flex: 0.4 0 100%;*/
-	/*flex-basis: 0;*/
-	width: 170px;
+	flex: 0 0 0;
+	min-width: 150px;
 
 
 	display: inline-block;
