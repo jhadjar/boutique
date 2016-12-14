@@ -34,7 +34,10 @@ http://ze-boutique.appspot.com/ is generated with the "products" folder from thi
             └── description.txt
 ```        
 
-In order to test, download [Google's SDK for App Engine](https://cloud.google.com/appengine/downloads).
+In order to test locally:
+- Download [Google's SDK for App Engine](https://cloud.google.com/appengine/downloads).
+- Extract (ex: googleappengine)
+- ```python googleappengine/devappserver.py boutique/```
 
 Some thoughts:
 - Simplify the creation of an app on Google Cloud on behalf of a user.
