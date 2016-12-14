@@ -25,13 +25,13 @@ http://ze-boutique.appspot.com/ is generated with the "products" folder from thi
 │       └── product6
 │           └── description.txt
 └── category3
-    ├── category1
-    │   ├── description.txt
-    │   └── product1
-    │       └── description.txt
     ├── description.txt
-    └── product6
-        └── description.txt
+    ├── product6
+    │   └── description.txt
+    └── subcategory10
+        ├── description.txt
+        └── product1
+            └── description.txt
 ```        
 
 
