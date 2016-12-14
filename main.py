@@ -74,12 +74,10 @@ class FrontHandler(Handler):
 			'categories': links,
 		}
 		try:
-
 			self.render(PAGES['main'], **data)
 
 		except TypeError:
-			print "TypeError"
-
+			# The folder has no subfolders, it must be a product then.
 			self.render(PAGES['product'])
 
 
