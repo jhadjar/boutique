@@ -9,8 +9,6 @@
 
 import os
 
-from collections import namedtuple
-
 import jinja2
 import webapp2
 
@@ -42,8 +40,6 @@ jinja_env = jinja2.Environment(
 	loader = jinja2.FileSystemLoader(templates),
 	# autoescape = True,
 )
-
-Link = namedtuple('Link', ['path', 'name'])
 
 
 class Handler(webapp2.RequestHandler):
