@@ -4,7 +4,6 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
-
 handlers:
 - url: /favicon\.ico
   static_files: favicon.ico
@@ -24,6 +23,7 @@ handlers:
 
 - url: /.*
   script: main.app
+  secure: always
 
 
 libraries:
