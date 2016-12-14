@@ -34,9 +34,12 @@ http://ze-boutique.appspot.com/ is generated with the "products" folder from thi
             └── description.txt
 ```        
 
+In order to test locally:
+- Download [Google's SDK for App Engine](https://cloud.google.com/appengine/downloads).
+- Extract (ex: googleappengine)
+- ```python googleappengine/dev_appserver.py boutique/```
 
 Some thoughts:
-- Add directory traversal.
-- Figure out a way to make the creation of an app on appspot.com easy.
+- Simplify the creation of an app on Google Cloud on behalf of a user.
 - When files change, the site must be synced. Right now, it's through appcfg.py. See if I can make it so that the user can host his files on Dropbox, and add a GAE Task that is triggered by a Dropbox change. This might be cool as I've never tinkered with Dropbox API.
 - There's the case where a product belongs to multiple categories. I haven't thought of the best way to do that, but what comes to mind is just adding a symlink that'd be rendered as a product.
