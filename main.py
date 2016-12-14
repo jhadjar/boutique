@@ -69,7 +69,6 @@ class FrontHandler(Handler):
 
 		requested_path = self.request.path.lstrip('/')
 		links = make_links(requested_path)
-		print links
 		data = {
 			'categories': links,
 		}
