@@ -43,28 +43,24 @@ jinja_env = jinja2.Environment(
 
 
 class Handler(webapp2.RequestHandler):
-	"""
-		Handler for rendering templates.
-	"""
+	"""Handler for rendering templates."""
 
 	def render(self, template, **data):
 		"""
-			Render `template` populated with `data`.
+		Render `template` populated with `data`.
 
-			Arguments:
-				template: to render (ex: "page.html")
-				data: key:values to populate template.
-			Output:
-				rendering.
+		Arguments:
+			template: to render (ex: "page.html")
+			data: key:values to populate template.
+		Output:
+			rendering.
 		"""
 		t = jinja_env.get_template(template)
 		self.response.out.write(t.render(data))
 
 
 class FrontHandler(Handler):
-	"""
-		Home page handler
-	"""
+	"""Home page handler"""
 
 	def get(self):
 
@@ -84,13 +80,13 @@ class FrontHandler(Handler):
 
 def make_links(directory):
 	"""
-		Make links and category names from directory's subdirectories
+	Return list of tuples [(link, name), ...]
 
-		Example:	"category1" contains "subcategory1", "subcategory2".
-					This will return the following:
-						/category1/subcategory1, subcategory1
-						/category1/subcategory2, subcategory2
-					It returns None if directory has no subdirectories.
+	Example:	"category1" contains "subcategory1", "subcategory2".
+				This will return the following:
+					/category1/subcategory1, subcategory1
+					/category1/subcategory2, subcategory2
+				It returns None if directory has no subdirectories.
 
 	"""
 	try:
