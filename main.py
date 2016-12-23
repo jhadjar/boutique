@@ -81,12 +81,12 @@ def make_links(directory):
 	"""
 	Return list of tuples [(link, name), ...]
 
-	Example:	"category1" contains "subcategory1", "subcategory2".
-				This will return the following:
-					/category1/subcategory1, subcategory1
-					/category1/subcategory2, subcategory2
-				It returns None if directory has no subdirectories.
-
+	Example:	
+		'category1' contains 'subcategory1', 'subcategory2'.
+		This will return the following:
+			[(/category1/subcategory1, subcategory1),
+			(/category1/subcategory2, subcategory2)]
+			It returns an empty string if directory has no subdirectories.
 	"""
 	try:
 		directories = next(os.walk(os.path.join('products', directory)))[1]
