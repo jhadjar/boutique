@@ -63,7 +63,6 @@ class FrontHandler(Handler):
 	"""Home page handler"""
 
 	def get(self):
-
 		requested_path = self.request.path.lstrip('/')
 		links = make_links(requested_path.encode('utf-8'))
 		print links
@@ -91,10 +90,8 @@ def make_links(directory):
 	"""
 	try:
 		directories = next(os.walk(os.path.join('products', directory)))[1]
-
 		links = ['/' + os.path.join(directory, d) for d in directories]
 		names = [os.path.basename(link) for link in links]
-
 		return zip(links, names) if links else None
 	except StopIteration as e:
 		# Quick hack to handle nonexisting categories typed in the address bar.
